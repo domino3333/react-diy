@@ -1,4 +1,4 @@
-
+import '../css/Main.css'
 
 function Main(){
 
@@ -9,7 +9,7 @@ function Main(){
 
     return (<>
 
-        <h1>여긴 메인</h1>
+        <h1 className="h1text">여긴 메인</h1>
         <p>내이름은 {user.name}</p>
         <p>나이는 {user.age}</p>
 
