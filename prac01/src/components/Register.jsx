@@ -3,25 +3,29 @@ import { useState } from "react";
 
 function Register() {
 
-    const [name, setName] = useState("이름");
-    const [birth, setBirth] = useState('');
 
-    const onChangeName = (e) => {
-        console.log(e);
-        setName(e.target.value);
-    }
-    const onChangeBirth = (e) => {
-        console.log(e);
-        setBirth(e.target.value);
+    const [input, setInput] = useState({
+        ["name"]: "default name",
+        birth: "",
+    })
+
+    const onChangeInfo = (e) => {
+        setInput({ ...input,
+            [e.target.name]: e.target.value });
     }
 
+    const checkALog = (e) => {
+        console.log(input.name);
+    }
 
     return (<>
         <label htmlFor="name">이름:</label>
-        <input value={name} onChange={onChangeName}type="text" id="name" name="name"/>
+        <input value={input.name} onChange={onChangeInfo} type="text" id="name" name="name" />
 
         <label htmlFor="birth">생년월일:</label>
-        <input type="date" id="birth" name="birth"onChange={onChangeBirth}/>
+        <input type="date" id="birth" name="birth" onChange={onChangeInfo} />
+
+        <button type="button" onClick={checkALog}>로그확인</button>
 
     </>)
 }
