@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import { useState } from 'react'
 import Register from './components/Register'
+import Form from './components/Form'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Register />
+      <Form />
     </>
   )
 }
