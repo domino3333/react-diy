@@ -6,11 +6,12 @@ import Main from './components/Main'
 
 function App() {
 
+
   return (
     <>
       <Header />
       <Main/>
-      <CafeButton text={"카페버튼텍스트"}/>
+      <CafeButton text={'텍스트입니다'}/>
     </>
   )
 }

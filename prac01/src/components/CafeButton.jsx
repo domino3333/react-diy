@@ -1,10 +1,21 @@
 
-const CafeButton= ({text, img})=>{
+const CafeButton = ({text}) => {
+
+    // const onClickButton = (e) => {
+    //     console.log(e);
+    //     alert(e.target.value);
+    // }
 
 
-    return(
+
+
+
+    return (
         <>
-            <button type="button">{text}</button>
+            <button type="button" onClick={()=>{
+                console.log(text)
+                alert(text)
+                }}>버튼123</button>
         </>
     )
 }
