@@ -7,16 +7,34 @@ import { useState } from 'react'
 import Register from './components/Register'
 import Form from './components/Form'
 
-function App() {
 
-  const [count, setCount] = useState(0);
+export default function App() {
+  const [version, setVersion] = useState(0);
 
+  function handleReset() {
+    setVersion(version + 1);
+  }
 
   return (
     <>
-      <Form />
+      <button onClick={handleReset}>Reset</button>
+      <Form1 key={version} />
     </>
-  )
+  );
 }
 
-export default App
+function Form1({key}) {
+  const [name, setName] = useState('Taylor');
+
+  return (
+    <>
+      <input
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+      <p>Hello, {name}.</p>
+      <p>Hello, {key}</p>
+    </>
+  );
+}
+
