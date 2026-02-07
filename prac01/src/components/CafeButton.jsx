@@ -1,18 +1,10 @@
 
-const CafeButton = ({text}) => {
-
-    const onClickButton = (e) => {
-        console.log(e);
-        alert(text);
-    }
-
-
-
+const CafeButton = ({text,onClick}) => {
 
 
     return (
         <>
-            <button type="button" onClick={onClickButton}>버튼123</button>
+            <button type="button" onClick={onClick}>{text}</button>
         </>
     )
 }
