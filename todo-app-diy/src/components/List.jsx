@@ -1,9 +1,12 @@
+import TodoItem from "./TodoItem";
+const List = ({todos}) => {
 
-const List = ()=>{
- 
-    return(<>
+    return (<>
         <div className="List">
-            List
+            <div>{todos.map((element) => {
+                return (<TodoItem key={element.id} {...element}/>)
+            })}
+            </div>
 
         </div>
     </>)

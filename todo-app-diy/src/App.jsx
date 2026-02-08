@@ -32,7 +32,7 @@ function App() {
 
         <Header />
         <Adder addContentToTodos={addContentToTodos} />
-        <List />
+        <List todos={todos}/>
         <p>{console.log({ todos })}</p>
       </div>
     </>
