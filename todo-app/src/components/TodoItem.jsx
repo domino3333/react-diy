@@ -6,6 +6,7 @@ const TodoItem = ({id,isDone,content,date}) => {
     return (
         <>
             <div className='TodoItem'>
+                <p>{console.log(id)}</p>
                 <input readOnly checked={isDone} type="checkbox" />
                 <div className='content'>{content}</div>
                 <div className='date'>{new Date(date).toLocaleDateString()}</div>
