@@ -7,22 +7,31 @@ const Adder = ({ addContentToTodos }) => {
     const [content, setContent] = useState('');
     const add_input_ref = useRef();
 
-    const clickAddBtn = ()=>{
+    const clickAddBtn = () => {
 
         addContentToTodos(content);
     }
 
-    const observeInputData = (e)=>{
+    const observeInputData = (e) => {
         setContent(e.target.value);
+    }
+    const enterKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            addContentToTodos(content);
+            setContent('');
+
+        }
     }
 
     return (<>
         <div className="Adder">
             <input
+                value={content}
                 ref={add_input_ref}
                 className="adder-input"
                 placeholder="추가할 업무를 입력하세요"
                 onChange={observeInputData}
+                onKeyDown={enterKeyDown}
             />
             <button className="adder-button" onClick={clickAddBtn}>추가</button>
         </div>
