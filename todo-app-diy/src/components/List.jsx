@@ -4,11 +4,11 @@ import { useState } from "react";
 
 const List = ({ todos }) => {
 
-    //list창에서 검색버튼, 또는 change로 실시간 검사?
-    //일단 검색버튼을 누르면 검색되게 하는게 ux엔 좋을듯
-
-    //검색창에 입력된 글자 state
+    //검색창에 입력 중인 글자 state
     const [keyword, setKeyword] = useState('');
+    // 실제 검색에 사용되는 검색어 (비즈니스 상태)
+    const [searchWord, setSearchWord] = useState("");
+
 
     const searchKeywordObserver = (e) => {
         setKeyword(e.target.value);
@@ -20,15 +20,14 @@ const List = ({ todos }) => {
         }
 
         return todos.filter((element) => {
-           return element.content.includes(keyword);
+            return element.content.includes(searchWord);
         })
     }
 
     const fileterdTodos = getFilteredData();
 
     const searchClick = (e) => {
-        if (keyword === '') return;
-        setKeyword('');
+        setSearchWord(keyword);
     }
 
 
