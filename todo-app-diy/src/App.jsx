@@ -2,25 +2,39 @@ import './App.css'
 import Adder from './components/Adder'
 import Header from './components/Header'
 import List from './components/List'
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 
 function App() {
+  const idRef = useRef(0);
 
-  const[todos,setTodos] = useState({
-    id:-1,
-    content:"축구",
-    date:new Date().getTime()
-  });
+  const [todos, setTodos] = useState([{
+    id: -1,
+    content: "축구",
+    date: new Date().getTime()
+  }]);
+
+  const addContentToTodos = (content) => {
+
+    if (content === '') return;
+
+    const newContent = {
+      id:idRef.current++,
+      content:content,
+      date:new Date().getTime()
+    }
+
+    setTodos([...todos, newContent])
+  }
 
   return (
     <>
-    <div className='App'>
+      <div className='App'>
 
-      <Header/>
-      <Adder setContent={setTodos}/>
-      <List/>
-      <p>{console.log({todos})}</p>
-    </div>
+        <Header />
+        <Adder addContentToTodos={addContentToTodos} />
+        <List />
+        <p>{console.log({ todos })}</p>
+      </div>
     </>
   )
 }
