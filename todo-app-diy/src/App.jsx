@@ -2,28 +2,45 @@ import './App.css'
 import Adder from './components/Adder'
 import Header from './components/Header'
 import List from './components/List'
-import { useState,useRef } from 'react'
+import { useState,useRef,useReducer } from 'react'
+
+
+function reducer(state,action){
+  if(action.type === 'added'){
+    return [...state,{
+      id:action.id++,
+      content:action.content,
+      date:action.date
+    }]
+  }
+}
 
 function App() {
   const idRef = useRef(0);
 
-  const [todos, setTodos] = useState([{
-    id: -1,
-    content: "축구",
-    date: new Date().getTime()
-  }]);
+  const [tasks, dispatch] = useReducer(reducer,[]);
 
-  const addContentToTodos = (content) => {
+  // const addContentToTodos = (content) => {
 
-    if (content === '') return;
+  //   if (content === '') return;
 
-    const newContent = {
-      id:idRef.current++,
-      content:content,
+  //   const newContent = {
+  //     id:idRef.current++,
+  //     content:content,
+  //     date:new Date().getTime()
+  //   }
+
+  //   setTodos([...todos, newContent])
+  // }
+
+  const handleAddTask = (content) => {
+
+    dispatch({
+      //액션 객체
+      type:'added',
+      id:idRef.current,
       date:new Date().getTime()
-    }
-
-    setTodos([...todos, newContent])
+    });
   }
 
   return (
@@ -31,9 +48,9 @@ function App() {
       <div className='App'>
 
         <Header />
-        <Adder addContentToTodos={addContentToTodos} />
-        <List todos={todos}/>
-        <p>{console.log({ todos })}</p>
+        <Adder addContentToTodos={handleAddTask} />
+        <List todos={tasks}/>
+        <p>{console.log({ tasks })}</p>
       </div>
     </>
   )
