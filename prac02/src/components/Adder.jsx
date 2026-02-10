@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Adder = ({ handleAddTask }) => {
+const Adder = ({ addState }) => {
 
     const [box, setBox] = useState('');
 
@@ -11,7 +11,7 @@ const Adder = ({ handleAddTask }) => {
 
     return (<>
         <input type="text" onChange={observeAdderBox} name="adderBox" id="adderBox" />
-        <button type="button" onClick={() => handleAddTask(box)} >추가</button>
+        <button type="button" onClick={() => addState(box)} >추가</button>
 
     </>)
 }

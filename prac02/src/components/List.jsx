@@ -1,11 +1,11 @@
 import TaskItem from "./TaskItem";
 
-const List = ({tasks,handleDeleteTask})=>{
+const List = ({tasks,deleteState})=>{
     
 
     return(<>
         {tasks.map((task)=>
-            <TaskItem key={task.id}{...task}handleDeleteTask={handleDeleteTask}/>
+            <TaskItem key={task.id}{...task}deleteState={deleteState}/>
         )}
         
     </>)

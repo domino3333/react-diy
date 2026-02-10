@@ -1,8 +1,8 @@
-const TaskItem = ({id,text,handleDeleteTask})=>{
+const TaskItem = ({id,content,deleteState})=>{
 
     return(<>
-        <p>{id} / {text}</p>
-        <button type="button" onClick={()=>handleDeleteTask(id)}>삭제</button>
+        <p>{id} / {content}</p>
+        <button type="button" onClick={()=>deleteState(id)}>삭제</button>
     </>)
 }
 
