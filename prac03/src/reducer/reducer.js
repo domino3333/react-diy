@@ -4,9 +4,9 @@ export default function reducer(state,action){
         case 'create':{
             return [...state,{
                 id:action.id,
-                name:action.name,
+                title:action.title,
                 singer:action.singer,
-                genre:action.gernre
+                genre:action.genre
             }]
         }
 
