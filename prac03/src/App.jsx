@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import List from './components/List'
 import reducer from './reducer/reducer'
+import { SongStateContext } from './context/SongStateContext'
 
 function App() {
 
@@ -13,16 +14,16 @@ function App() {
     dispatch({
       type: 'create',
       id: idRef.current++,
-      title:input.title,
-      singer:input.singer,
-      genre:input.genre
+      title: input.title,
+      singer: input.singer,
+      genre: input.genre
     })
   }
 
-  function deleteItem(id){
+  function deleteItem(id) {
     dispatch({
-      type:'delete',
-      id:id,
+      type: 'delete',
+      id: id,
     })
   }
 
@@ -30,10 +31,11 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Adder createItem={createItem}/>
-      <List song={song} deleteItem={deleteItem}/>
-
+      <SongStateContext.Provider value={{song}}>
+        <Header />
+        <Adder createItem={createItem} />
+        <List deleteItem={deleteItem} />
+      </SongStateContext.Provider>
     </>
   )
 }
