@@ -1,10 +1,12 @@
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SongDispatchContext } from "./context/SongDispatchContext";
 
-const Adder = ({ createItem }) => {
+const Adder = () => {
 
     const [input, setInput] = useState();
 
+    const {createItem} = useContext(SongDispatchContext)
     const observeInput = (e) => {
         setInput({
             ...input,

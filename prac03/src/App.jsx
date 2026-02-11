@@ -5,6 +5,7 @@ import Header from './components/Header'
 import List from './components/List'
 import reducer from './reducer/reducer'
 import { SongStateContext } from './context/SongStateContext'
+import { SongDispatchContext } from './context/SongDispatchContext'
 
 function App() {
 
@@ -31,10 +32,12 @@ function App() {
 
   return (
     <>
-      <SongStateContext.Provider value={{song}}>
-        <Header />
-        <Adder createItem={createItem} />
-        <List deleteItem={deleteItem} />
+      <SongStateContext.Provider value={{ song }}>
+        <SongDispatchContext.Provider value={{ createItem, deleteItem }}>
+          <Header />
+          <Adder />
+          <List />
+        </SongDispatchContext.Provider>
       </SongStateContext.Provider>
     </>
   )
