@@ -9,7 +9,7 @@ function App() {
 
   const [song, dispatch] = useReducer(reducer, [])
   const idRef = useRef(1);
-  function create(input) {
+  function createItem(input) {
     dispatch({
       type: 'create',
       id: idRef.current++,
@@ -19,14 +19,20 @@ function App() {
     })
   }
 
-  console.log(song);
+  function deleteItem(id){
+    dispatch({
+      type:'delete',
+      id:id,
+    })
+  }
+
 
 
   return (
     <>
       <Header />
-      <Adder create={create}/>
-      <List song={song}/>
+      <Adder createItem={createItem}/>
+      <List song={song} deleteItem={deleteItem}/>
 
     </>
   )

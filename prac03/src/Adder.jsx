@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const Adder = ({ create }) => {
+const Adder = ({ createItem }) => {
 
     const [input, setInput] = useState();
 
@@ -24,7 +24,7 @@ const Adder = ({ create }) => {
                 <option value="ballad">발라드</option>
                 <option value="pop">팝</option>
             </select>
-            <button type="button" onClick={() => { create(input) }}>등록</button>
+            <button type="button" onClick={() => { createItem(input) }}>등록</button>
 
         </>
     )
