@@ -1,13 +1,17 @@
+import { StateContext } from "../context/StateContext";
 import TaskItem from "./TaskItem";
+import { useContext } from "react";
 
-const List = ({tasks,deleteState})=>{
-    
 
-    return(<>
-        {tasks.map((task)=>
-            <TaskItem key={task.id}{...task}deleteState={deleteState}/>
+const List = () => {
+
+    const { state } = useContext(StateContext)
+
+    return (<>
+        {state.map((task) =>
+            <TaskItem key={task.id}{...task} />
         )}
-        
+
     </>)
 }
 
