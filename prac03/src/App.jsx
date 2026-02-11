@@ -26,7 +26,7 @@ function App() {
     <>
       <Header />
       <Adder create={create}/>
-      <List />
+      <List song={song}/>
 
     </>
   )

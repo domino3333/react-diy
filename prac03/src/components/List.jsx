@@ -1,9 +1,12 @@
+import SongItem from "./SongItem";
 
 
-const List = ()=>{
+const List = ({ song }) => {
 
-    return(<>
-        <h1>리스트</h1>
+
+    return (<>
+        {song.map((s) =>
+            <SongItem key={s.id}{...s} />)}
     </>)
 }
 
