@@ -1,17 +1,28 @@
 .header {
   width: 100%;
-  border-bottom: 1px solid #e5e7eb;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(198, 40, 40, 0.25);
 }
 
 .header-inner {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 22px 16px;
+  display: flex;
+  align-items: center;
 }
 
 .board-title {
   font-size: 28px;
-  font-weight: 700;
-  color: #111827;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.board-title::before {
+  content: "🍳";
+  margin-right: 10px;
 }

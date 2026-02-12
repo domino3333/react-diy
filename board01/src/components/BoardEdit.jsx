@@ -23,18 +23,15 @@ const BoardEdit = () => {
 
     if (!boardInfo) {
         return (
-            <div className="edit-wrapper">
-                <div className="edit-inner">
-                    <div className="not-found">
+            <div className="kitchen-edit-wrapper">
+                <div className="kitchen-edit-inner">
+                    <div className="kitchen-not-found">
                         존재하지 않는 게시글입니다.
                     </div>
                 </div>
             </div>
         );
     }
-
-
-
 
     const observeInput = (e) => {
         setInput({
@@ -44,15 +41,15 @@ const BoardEdit = () => {
     };
 
     return (
-        <div className="edit-wrapper">
-            <div className="edit-inner">
+        <div className="kitchen-edit-wrapper">
+            <div className="kitchen-edit-inner">
 
-                <div className="edit-header">
+                <div className="kitchen-edit-header">
 
                     <select
-                        className="edit-category-select"
+                        className="kitchen-category-select"
                         name="category"
-                        defaultValue={boardInfo.category}
+                        defaultValue={boardInfo.categorys}
                         onChange={observeInput}
                     >
                         <option value="전체">전체</option>
@@ -63,34 +60,32 @@ const BoardEdit = () => {
                     </select>
 
                     <input
-                        className="edit-title-input"
+                        className="kitchen-title-input"
                         type="text"
                         name="title"
                         value={input.title}
                         onChange={observeInput}
                     />
 
-                    <div className="edit-meta">
-                        <span className="edit-writer">{writer}</span>
-                        <span className="edit-date">
+                    <div className="kitchen-meta">
+                        <span className="kitchen-writer">{writer}</span>
+                        <span className="kitchen-date">
                             {new Date(date).toLocaleString("ko-KR")}
                         </span>
                     </div>
                 </div>
 
-                <div className="edit-divider" />
-
                 <textarea
-                    className="edit-content-textarea"
+                    className="kitchen-content-textarea"
                     name="content"
                     value={input.content}
                     onChange={observeInput}
                 />
 
-                <div className="edit-footer">
-                    <div className="edit-btn-group">
+                <div className="kitchen-footer">
+                    <div className="kitchen-btn-group">
                         <button
-                            className="edit-complete-btn"
+                            className="kitchen-complete-btn"
                             onClick={() => {
                                 onUpdate(id, input);
                                 nav(`/boardDetail/${id}`);
@@ -100,7 +95,7 @@ const BoardEdit = () => {
                         </button>
 
                         <button
-                            className="edit-back-btn"
+                            className="kitchen-back-btn"
                             onClick={() => nav(-1)}
                         >
                             뒤로가기

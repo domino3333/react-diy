@@ -37,6 +37,18 @@ export function useBoard() {
     });
   }
 
+  function onCreate_comment(boardId,commentId,writer,content){
+    dispatch({
+      type:"comment_created",
+      boardId:boardId,
+      commentId:commentId,
+      writer:writer,
+      content:content,
+      date:new Date().getTime()
+
+    })
+  }
+
   function clickFilterCategory(e) {
     setCategory(e.target.value);
   }
@@ -48,6 +60,7 @@ export function useBoard() {
 
   return {
     filteredBoard,
+    onCreate_comment,
     onCreate,
     onUpdate,
     onDelete,

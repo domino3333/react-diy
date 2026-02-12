@@ -7,7 +7,8 @@ export function boardReducer(state, action) {
                 content: action.content,
                 date: action.date,
                 writer: action.writer,
-                category:action.category
+                category: action.category,
+                comment: []
             }, ...state]
         }
         case "updated": {
@@ -16,6 +17,24 @@ export function boardReducer(state, action) {
         case "deleted": {
             return state.filter((item) => item.id !== action.id)
         }
+        case "comment_created": {
+            return state.map((item) => item.id === action.boardId ?
+                {
+                    ...item,
+                    comment: [
+                        {
+                            id: action.commentId,
+                            writer: action.writer,
+                            content: action.content,
+                            date: action.date
+                        },
+                        ...item.comment,
+                    ],
+                }
+                : item)
+        }
+        default:
+            return state;
     }
 
 }

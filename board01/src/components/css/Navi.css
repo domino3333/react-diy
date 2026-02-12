@@ -1,13 +1,13 @@
 .navi {
   width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: #fffaf3;
+  border-bottom: 1px solid #f1e0d6;
 }
 
 .navi-inner {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 14px 16px;
+  padding: 18px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,30 +19,35 @@
 }
 
 .category-btn {
-  padding: 8px 14px;
-  border: 1px solid #d1d5db;
-  background-color: #f9fafb;
-  border-radius: 20px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 2px solid #d7ccc8;
+  background-color: #ffffff;
   cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  color: #6d4c41;
+  transition: 0.3s;
 }
 
 .category-btn:hover {
-  background-color: #e5e7eb;
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .write-btn {
-  padding: 8px 16px;
+  padding: 9px 20px;
+  border-radius: 25px;
   border: none;
-  background-color: #2563eb;
+  background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%);
   color: white;
-  font-weight: 600;
-  border-radius: 20px;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.3s;
 }
 
 .write-btn:hover {
-  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 187, 106, 0.35);
 }

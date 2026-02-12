@@ -76,7 +76,6 @@ const BoardNew = () => {
           />
         </div>
 
-        <div className="new-divider" />
 
         <textarea
           name="content"

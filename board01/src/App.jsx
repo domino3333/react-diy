@@ -12,6 +12,7 @@ import { useBoard } from './components/hooks/useBoard'
 function App() {
 
   const { filteredBoard,
+    onCreate_comment,
     onCreate,
     onUpdate,
     onDelete,
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
 
-      <BoardDispatchContext.Provider value={{ onCreate, onUpdate, onDelete, clickFilterCategory, setCategory }}>
+      <BoardDispatchContext.Provider value={{ onCreate, onUpdate, onDelete, clickFilterCategory, setCategory, onCreate_comment }}>
         <BoardStateContext.Provider value={filteredBoard}>
           <Routes>
             <Route path="/" element={<Home />} />
