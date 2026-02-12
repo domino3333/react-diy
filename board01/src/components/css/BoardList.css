@@ -1,0 +1,12 @@
+.board-list-wrapper {
+  width: 100%;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 30px 0;
+}
+
+.board-list-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

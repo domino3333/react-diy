@@ -1,0 +1,126 @@
+.detail-wrapper {
+  width: 100%;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.detail-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+/* 카테고리 */
+.detail-category {
+  display: inline-block;
+  background-color: #eef2ff;
+  color: #3730a3;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+/* 제목 */
+.detail-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* 작성자 + 날짜 */
+.detail-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* 구분선 */
+.detail-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 30px 0;
+}
+
+/* 본문 */
+.detail-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #374151;
+  white-space: pre-line;
+}
+
+/* 하단 */
+.detail-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detail-btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+/* 수정 버튼 */
+.detail-edit-btn {
+  padding: 10px 18px;
+  background-color: #10b981;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.detail-edit-btn:hover {
+  background-color: #059669;
+}
+
+/* 삭제 버튼 */
+.detail-delete-btn {
+  padding: 10px 18px;
+  background-color: #ef4444;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.detail-delete-btn:hover {
+  background-color: #dc2626;
+}
+
+/* 목록 버튼 */
+.detail-back-btn {
+  padding: 10px 18px;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.detail-back-btn:hover {
+  background-color: #1e40af;
+}
+
+/* 존재하지 않을 때 */
+.not-found {
+  font-size: 18px;
+  text-align: center;
+  padding: 80px 0;
+  color: #6b7280;
+}

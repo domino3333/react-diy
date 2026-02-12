@@ -1,0 +1,124 @@
+.new-wrapper {
+  width: 100%;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.new-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+/* 셀렉트 */
+.new-category-select {
+  appearance: none;
+  background-color: #eef2ff;
+  color: #3730a3;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 40px 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #c7d2fe;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/* 제목 */
+.new-title-input {
+  width: 100%;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 12px 10px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.new-title-input:focus {
+  border-bottom: 2px solid #2563eb;
+}
+
+/* 작성자 */
+.new-writer-input {
+  width: 200px;
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.new-writer-input:focus {
+  border-color: #2563eb;
+}
+
+/* 구분선 */
+.new-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 30px 0;
+}
+
+/* 내용 */
+.new-content-textarea {
+  width: 100%;
+  min-height: 300px;
+  resize: vertical;
+  font-size: 16px;
+  line-height: 1.8;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  outline: none;
+}
+
+.new-content-textarea:focus {
+  border-color: #2563eb;
+}
+
+/* 버튼 */
+.new-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.new-btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.new-submit-btn {
+  padding: 10px 18px;
+  background-color: #10b981;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.new-submit-btn:hover {
+  background-color: #059669;
+}
+
+.new-back-btn {
+  padding: 10px 18px;
+  background-color: #6b7280;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.new-back-btn:hover {
+  background-color: #4b5563;
+}
