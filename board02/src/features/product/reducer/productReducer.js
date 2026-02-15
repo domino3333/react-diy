@@ -1,6 +1,6 @@
 
 
-export default function todoReducer(state, action) {
+export default function productReducer(state, action) {
     switch (action.type) {
         case 'created': {
             return [{
@@ -10,10 +10,7 @@ export default function todoReducer(state, action) {
             quantity:action.quantity
             }, ...state]
         }
-        case 'updated':{
-        }
-        case 'delete':{
-        }
+        
 
     }
 
